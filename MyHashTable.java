@@ -18,7 +18,15 @@ public class MyHashTable<K, V> {
     private int M = 11;
     private int size;
     public MyHashTable(){
-
+        this.chainArray = (HashNode<K, V>[]) new HashNode[M];
+        this.size = 0;
 
     }
+    public MyHashTable(int M){
+        this.M = M;
+        this.chainArray = (HashNode<K, V>[]) new HashNode[M];
+        this.size = 0;
+    }
+
+
 }
