@@ -27,6 +27,10 @@ public class MyHashTable<K, V> {
         this.chainArray = (HashNode<K, V>[]) new HashNode[M];
         this.size = 0;
     }
+    private int hash(K key){
+        int result=(key.hashCode() & 0x7fffffff) % M;
+        return result;
+    }
 
 
 }
