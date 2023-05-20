@@ -101,4 +101,23 @@ public class MyHashTable<K, V> {
         return null;
     }
 
+    public void reSize () {
+        int newSize = size * 2;
+        MyHashTable<K, V> newHash = new MyHashTable<> (newSize);
+        for (int i = 0; i < M; i++) {
+            HashNode<K, V> node = chainArray[i];
+            while (node != null) {
+                newHash.put (node.key, node.value);
+                node = node.next;
+            }
+        }
+        this.M = newHash.M;
+        this.chainArray = newHash.chainArray;
+    }
 }
+
+
+
+
+
+
